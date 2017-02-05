@@ -30,5 +30,5 @@ node_modules
 npm-debug.log
 
 # Project specific
-files/*
-*.csv
+tmp/uploads/*.csv
+tmp/json/*.json

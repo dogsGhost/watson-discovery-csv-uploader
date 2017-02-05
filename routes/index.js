@@ -3,7 +3,7 @@ const multer = require('multer')
 
 const router = express.Router()
 const storage = multer.diskStorage({
-  destination: './files',
+  destination: './tmp/uploads',
   filename(req, file, cb) {
     let filename = file.originalname.split('.')
     filename = filename[0] + Date.now() + '.' + filename[1]
@@ -14,12 +14,12 @@ const upload = multer({
   storage,
   fileFilter(req, file, cb) {
     const mimeTypes = [
-      'application/json',
+      // 'application/json',
       // 'application/msword',
-      'application/pdf',
-      'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-      // 'text/csv',
-      'text/html',
+      // 'application/pdf',
+      // 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+      'text/csv',
+      // 'text/html',
     ]
     cb(null, mimeTypes.includes(file.mimetype))
   }
