@@ -1,0 +1,28 @@
+<h1 class="mb-10">{{title}}</h1>
+
+{{#if err}}
+  <pre class="mb-10">{{err}}</pre>
+{{/if}}
+
+{{#if response}}
+  <p class="mb-10 alert">File added successfully.</p>
+{{/if}}
+
+<form action="/" method="POST" id="form" enctype="multipart/form-data">
+  <label class="mb-10" for="username">Username:
+    <input require type="text" name="username" value="{{username}}">
+  </label>
+  <label class="mb-10" for="password">Password:
+    <input require type="text" name="password" value="{{password}}">
+  </label>
+  <label class="mb-10" for="collection_id">Collection ID:
+    <input require type="text" name="collection_id" value="{{collection_id}}">
+  </label>
+  <label class="mb-10" for="environment_id">Environment ID:
+    <input require type="text" name="environment_id" value="{{environment_id}}">
+  </label>
+  <div class="mb-10">
+    <input required type="file" name="sourceFile">
+  </div>
+  <input type="submit" value="Submit">
+</form>

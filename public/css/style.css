@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 1em auto;
+  width: 800px;
+  max-width: 98%;
+  font: 16px sans-serif;
+  color: #222;
+}
+
+.wrapper {
+  padding: 1em;
+  border: 1px solid grey;
+}
+
+a {
+  color: #00B7FF;
+}
+
+label {
+  display: block;
+}
+
+.mb-10 {
+  margin-bottom: 1em;
+}
+
+.alert {
+  padding: 0.5em;
+  font-weight: bold;
+  background: #ddd;
+  border-radius: 0.5em;
+}
