@@ -32,3 +32,5 @@ npm-debug.log
 # Project specific
 tmp/uploads/*.csv
 tmp/json/*.json
+.vscode
+samples
