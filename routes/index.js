@@ -14,12 +14,11 @@ const upload = multer({
   storage,
   fileFilter(req, file, cb) {
     const mimeTypes = [
-      // 'application/json',
-      // 'application/msword',
-      // 'application/pdf',
-      // 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+      'application/json',
+      'application/pdf',
+      'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
       'text/csv',
-      // 'text/html',
+      'text/html',
     ]
     cb(null, mimeTypes.includes(file.mimetype))
   }

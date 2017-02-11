@@ -1,6 +1,6 @@
 {
   "name": "watson-discovery-csv-uploader",
-  "version": "0.1.1",
+  "version": "0.2.1",
   "description": "Upload csv files to a Watson Discovery collection",
   "scripts": {
     "start": "node app.js"
