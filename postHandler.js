@@ -26,7 +26,6 @@ module.exports = (req, res, next) => {
         environment_id: b.environment_id,
         file,
       }, (err, response) => {
-console.log(err ? err : response)
         // delete the uploaded file after it's been added
         if (!err) {
           rmdir(path, () => {})
@@ -52,7 +51,7 @@ console.log(err ? err : response)
         // delete csv file and start adding json
         rmdir('tmp/uploads/*', () => sendJSON())
       } else {
-console.log(err)
+        // TODO: handle error
       }
     })
 }
