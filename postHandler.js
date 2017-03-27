@@ -6,6 +6,9 @@ const rmdir = require('rimraf')
 
 const title = 'CSV Uploader for Watson Discovery Service'
 
+
+var interval = 0.1 * 1000; // 0.1 second;
+
 module.exports = (req, res, next) => {
   const b = req.body
   const jsonFilePaths = []
@@ -20,6 +23,8 @@ module.exports = (req, res, next) => {
   // `i` is only passed when sendFile is called in a loop,
   // we have a default value so the check the callback evaluates to true
   const sendFile = (path, i = -1) => {
+  // add 0.1 second delay per loop iteration to prevent timeout of discovery
+     setTimeout( function (i) {
     const file = fs.createReadStream(path)
     discovery.addDocument({
       collection_id: b.collection_id,
@@ -35,6 +40,7 @@ module.exports = (req, res, next) => {
         res.render('index', { title, err, response })
       }
     })
+    }, interval * i, i);
   }
 
   // read csv file and convert csv rows into individual json files
